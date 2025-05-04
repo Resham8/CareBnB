@@ -42,6 +42,14 @@ export const listings = [
       "BBQ grill",
       "Outdoor shower",
     ],
+    medicalEquipment: [
+      "First Aid Kit",
+      "Blood Pressure Monitor",
+      "Digital Thermometer",
+      "Glucometer (Sugar Check)",
+      "Emergency Medication Kit",
+      "Pulse Oximeter"
+    ],
     superhost: true,
     availableDates: "Jul 1-6",
     distance: "2,317 miles away",
@@ -115,6 +123,12 @@ export const listings = [
       "Books and board games",
       "Fire pit",
       "Hammock",
+    ],
+    medicalEquipment: [
+      "First Aid Kit",      
+      "Digital Thermometer",    
+      "Emergency Medication Kit",
+      "Pulse Oximeter"
     ],
     superhost: true,
     availableDates: "Aug 10-15",
@@ -263,6 +277,14 @@ export const listings = [
       "Outdoor seating",
       "Free parking",
       "Board games",
+    ],
+    medicalEquipment: [
+      "First Aid Kit",
+      "Blood Pressure Monitor",
+      "Digital Thermometer",
+      "Glucometer (Sugar Check)",
+      "Emergency Medication Kit",
+      "Pulse Oximeter"
     ],
     superhost: true,
     availableDates: "Sep 5-10",
@@ -486,6 +508,11 @@ export const listings = [
       "Fire pit",
       "Free parking",
     ],
+    medicalEquipment: [
+      "First Aid Kit",      
+      "Glucometer (Sugar Check)",
+      "Emergency Medication Kit",     
+    ],
     superhost: false,
     availableDates: "Aug 1-6",
     distance: "2,456 miles away",
@@ -559,6 +586,13 @@ export const listings = [
       "Washer/Dryer",
       "Free parking",
       "Sonos sound system",
+    ],
+    medicalEquipment: [
+      "First Aid Kit",
+      "Blood Pressure Monitor",
+      "Digital Thermometer",
+      "Glucometer (Sugar Check)",
+      "Emergency Medication Kit",
     ],
     superhost: true,
     availableDates: "Sep 15-20",
@@ -634,6 +668,11 @@ export const listings = [
       "BBQ grill",
       "Parking",
     ],
+    medicalEquipment: [
+      "First Aid Kit",     
+      "Emergency Medication Kit",
+      "Pulse Oximeter"
+    ],
     superhost: true,
     availableDates: "Nov 5-10",
     distance: "3,756 miles away",
@@ -707,6 +746,14 @@ export const listings = [
       "Washer/Dryer",
       "Smart home features",
       "Elevator",
+    ],
+    medicalEquipment: [
+      "First Aid Kit",
+      "Blood Pressure Monitor",
+      "Digital Thermometer",
+      "Glucometer (Sugar Check)",
+      "Emergency Medication Kit",
+      "Pulse Oximeter"
     ],
     superhost: true,
     availableDates: "Dec 10-15",
@@ -821,8 +868,7 @@ export const listings = [
     location: "Whistler, Canada",
     price: 375000,
     rating: 4.95,
-    images: [
-      "https://images.pexels.com/photos/2098635/pexels-photo-2098635.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    images: [      
       "https://images.pexels.com/photos/2079294/pexels-photo-2079294.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/2440022/pexels-photo-2440022.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
       "https://images.pexels.com/photos/271815/pexels-photo-271815.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -855,6 +901,12 @@ export const listings = [
       "Game room",
       "Washer/Dryer",
       "Free parking",
+    ],
+    medicalEquipment: [
+      "First Aid Kit",      
+      "Glucometer (Sugar Check)",
+      "Emergency Medication Kit",
+      "Pulse Oximeter"
     ],
     superhost: true,
     availableDates: "Jan 15-20",
