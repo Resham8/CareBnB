@@ -165,7 +165,6 @@ export default function SearchBar() {
 
   return (
     <div className="flex justify-center w-full">
-      {/* Mobile Search Bar */}
       <div
         className="md:hidden w-full mx-4 flex items-center border rounded-full shadow-md bg-white p-4 cursor-pointer"
         onClick={() => setIsExpanded(true)}
@@ -220,7 +219,6 @@ export default function SearchBar() {
           </button>
         </div>
       </div>
-      
     </div>
   );
 }

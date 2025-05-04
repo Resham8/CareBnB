@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import AirbnbFiltersModal from './FilterModal';
 import { 
   ChevronLeft, 
   ChevronRight, 
@@ -16,11 +17,10 @@ import {
   Snowflake, 
   TreePalm, 
   Building, 
-  
   SlidersHorizontal
 } from 'lucide-react';
-import AirbnbFiltersModal from './FilterModal';
-// TreePalm, 
+
+
 const categories = [
   { id: 'amazing-views', name: 'Amazing views', icon: Mountain },
   { id: 'beaches', name: 'Beaches', icon: Umbrella },
@@ -39,7 +39,7 @@ const categories = [
   { id: 'islands', name: 'Islands', icon: TreePalm },
 ];
 
-const FilterBar = ({ onCategoryChange }) => {
+const FilterBar = ({ onApplyFilters, currentFilters }) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
@@ -47,6 +47,16 @@ const FilterBar = ({ onCategoryChange }) => {
   const [showFilters, setShowFilters] = useState(false);
   const scrollContainerRef = useRef(null);
 
+  const handleApplyFilters = (newFilters) => {
+    onApplyFilters(newFilters);
+    setShowFilters(false);
+  };
+
+  
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+  };
+  
   const handleScroll = () => {
     if (scrollContainerRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
@@ -60,14 +70,14 @@ const FilterBar = ({ onCategoryChange }) => {
     const scrollContainer = scrollContainerRef.current;
     if (scrollContainer) {
       scrollContainer.addEventListener('scroll', handleScroll);
-      handleScroll(); // Check initial state
+      handleScroll();
       
       return () => {
         scrollContainer.removeEventListener('scroll', handleScroll);
       };
     }
   }, []);
-
+  
   const scroll = (direction) => {
     if (scrollContainerRef.current) {
       const { clientWidth } = scrollContainerRef.current;
@@ -78,19 +88,13 @@ const FilterBar = ({ onCategoryChange }) => {
       });
     }
   };
-
-  const handleCategorySelect = (categoryId) => {
-    const newSelectedCategory = categoryId === selectedCategory ? null : categoryId;
-    setSelectedCategory(newSelectedCategory);
-    onCategoryChange(newSelectedCategory);
-  };
-
+  
   const toggleFilters = () => {
     setShowFilters(!showFilters);
   };
 
   return (
-    <div className="relative py-4">     
+    <div className="relative py-4 dark:bg-gray-900">      
       {showLeftArrow && (
         <button
           onClick={() => scroll('left')}
@@ -100,7 +104,7 @@ const FilterBar = ({ onCategoryChange }) => {
           <ChevronLeft className="h-6 w-6 text-gray-500 dark:text-gray-300" />
         </button>
       )}
-      
+            
       <div 
         ref={scrollContainerRef}
         className="flex space-x-8 overflow-x-auto scrollbar-hide px-4 md:px-8 scroll-smooth"
@@ -116,7 +120,7 @@ const FilterBar = ({ onCategoryChange }) => {
                   ? 'border-gray-800 dark:border-white text-gray-800 dark:text-white'
                   : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-white hover:border-gray-300 dark:hover:border-gray-600'
               }`}
-              onClick={() => handleCategorySelect(category.id)}
+              onClick={() => handleCategoryClick(category.id)}
             >
               <IconComponent className="h-6 w-6" />
               <span className="text-xs whitespace-nowrap">{category.name}</span>
@@ -124,7 +128,7 @@ const FilterBar = ({ onCategoryChange }) => {
           );
         })}
       </div>
-    
+      
       {showRightArrow && (
         <button
           onClick={() => scroll('right')}
@@ -134,19 +138,24 @@ const FilterBar = ({ onCategoryChange }) => {
           <ChevronRight className="h-6 w-6 text-gray-500 dark:text-gray-300" />
         </button>
       )}
-     
+      
       <div className="absolute right-0 top-1/2 -translate-y-1/2 pr-2">
         <button
           onClick={toggleFilters}
           className="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 dark:border-gray-600 shadow-sm hover:shadow-md transition-shadow bg-white dark:bg-gray-800"
         >
-          <SlidersHorizontal size={16} />
-          <span className="font-medium text-sm">Filters</span>
+          <SlidersHorizontal size={16} className=" text-gray-500 dark:text-gray-300" />
+          <span className="font-medium text-sm dark:text-gray-100">Filters</span>
         </button>
       </div>
-      
+
       {showFilters && (
-        <AirbnbFiltersModal showFilters={showFilters} setShowFilters={setShowFilters}/>
+        <AirbnbFiltersModal 
+          showFilters={showFilters}
+          setShowFilters={setShowFilters}
+          onApply={handleApplyFilters}
+          initialFilters={currentFilters}
+        />
       )}
     </div>
   );

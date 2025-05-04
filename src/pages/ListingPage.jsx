@@ -314,6 +314,34 @@ const ListingPage = () => {
             )}
           </div>
 
+          {/* Medical Equipment */}
+          {listing.medicalEquipment && listing.medicalEquipment.length > 0 && (
+            <div className="py-8 border-b border-gray-200 dark:border-gray-800">
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
+                Health & Medical Equipment
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {listing.medicalEquipment.slice(0, 6).map((equipment, idx) => (
+                  <div key={idx} className="flex items-center">
+                    <div className="w-8 h-8 flex items-center justify-center">
+                      <span className="text-gray-700 dark:text-gray-300 text-lg">
+                        ✓
+                      </span>
+                    </div>
+                    <span className="text-gray-700 dark:text-gray-300">
+                      {equipment}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              {listing.medicalEquipment.length > 6 && (
+                <button className="mt-6 px-6 py-3 border border-gray-800 dark:border-gray-200 rounded-lg text-gray-800 dark:text-white font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                  Show all {listing.medicalEquipment.length} items
+                </button>
+              )}
+            </div>
+          )}
+
           {/* Calendar */}
           <div className="py-8 border-b border-gray-200 dark:border-gray-800">
             <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
@@ -347,13 +375,12 @@ const ListingPage = () => {
           </div>
         </div>
 
-        
         <div className="lg:block">
           <div className="sticky top-28 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl shadow-lg p-6">
             <div className="flex justify-between items-center mb-6">
               <div>
                 <span className="text-xl font-semibold text-gray-900 dark:text-white">
-                ₹{listing.price}
+                  ₹{listing.price}
                 </span>
                 <span className="text-gray-600 dark:text-gray-400"> night</span>
               </div>
@@ -437,10 +464,10 @@ const ListingPage = () => {
               <div className="mt-4 space-y-4">
                 <div className="flex justify-between">
                   <span className="text-gray-700 dark:text-gray-300 underline">
-                  ₹{listing.price} x 5 nights
+                    ₹{listing.price} x 5 nights
                   </span>
                   <span className="text-gray-700 dark:text-gray-300">
-                  ₹{listing.price * 5}
+                    ₹{listing.price * 5}
                   </span>
                 </div>
                 <div className="flex justify-between">
@@ -464,7 +491,7 @@ const ListingPage = () => {
                     Total before taxes
                   </span>
                   <span className="text-gray-900 dark:text-white">
-                  ₹{listing.price * 5 + cleaningFee + serviceFee}
+                    ₹{listing.price * 5 + cleaningFee + serviceFee}
                   </span>
                 </div>
               </div>
@@ -476,7 +503,7 @@ const ListingPage = () => {
           </div>
         </div>
       </div>
-     
+
       <div className="mt-8 pb-12 border-b border-gray-200 dark:border-gray-800">
         <div className="flex items-center mb-6">
           <Star
@@ -590,7 +617,7 @@ const ListingPage = () => {
           </div>
         </div>
       </div>
-    
+
       <div className="py-12">
         <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-8">
           Things to know

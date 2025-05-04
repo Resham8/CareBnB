@@ -34,16 +34,14 @@ const ListingCard = ({
   };
 
   return (
-    <Link to={`/listing/${id}`} className="group block">
-      {/* Image carousel */}
+    <Link to={`/listing/${id}`} className="group block">      
       <div className="relative aspect-square overflow-hidden rounded-xl">
         <img
           src={images[currentImageIndex]}
           alt={title}
           className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
         />
-
-        {/* Image navigation dots */}
+        
         {images.length > 1 && (
           <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-1">
             {images.map((_, index) => (
@@ -56,8 +54,7 @@ const ListingCard = ({
             ))}
           </div>
         )}
-
-        {/* Navigation arrows */}
+        
         {images.length > 1 && (
           <>
             <button
@@ -97,7 +94,6 @@ const ListingCard = ({
           </>
         )}
 
-        {/* Favorite button */}
         <button
           onClick={handleFavoriteClick}
           className="absolute top-3 right-3 z-10"
@@ -112,8 +108,7 @@ const ListingCard = ({
           />
         </button>
       </div>
-
-      {/* Listing information */}
+      
       <div className="mt-3">
         <div className="flex justify-between items-start">
           <h3 className="font-medium text-gray-900 dark:text-white">{title}</h3>

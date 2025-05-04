@@ -6,9 +6,9 @@ export default function CollapsedSearchbar({ isMobile }) {
 
   return (
     <div className="hidden md:flex items-center border rounded-full p-2 shadow-sm hover:shadow-md transition-shadow">
-      <button className="px-4 font-medium text-sm">Anywhere</button>
+      <button className="px-4 font-medium text-sm dark:text-gray-400">Anywhere</button>
       <span className="h-5 border-r border-gray-300 dark:border-gray-600"></span>
-      <button className="px-4 font-medium text-sm">Any week</button>
+      <button className="px-4 font-medium text-sm dark:text-gray-400">Any week</button>
       <span className="h-5 border-r border-gray-300 dark:border-gray-600"></span>
       <button className="px-4 text-gray-500 dark:text-gray-400 text-sm">
         Add guests
