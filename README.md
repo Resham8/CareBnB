@@ -11,8 +11,6 @@
 - [Live Demo](#live-demo)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ---
 
@@ -66,10 +64,6 @@ To run this project locally, follow these steps:
     ```bash
     npm run dev
     ```
-
-4. **Open the app in your browser**:
-    Go to `http://localhost:3000` to view the website.
-
 ---
 
 ## **Usage**
@@ -89,3 +83,36 @@ To run this project locally, follow these steps:
 - **Local Storage**: For toggling dark mode between sessions.
 
 ---
+
+
+## 🌍 A Health-Conscious Take on Airbnb
+
+**Welcome!**  
+This project is a thoughtful reimagination of Airbnb—built with the idea that travel should be **safe, inclusive, and reassuring** for everyone, especially those with health conditions.
+
+### 🩺 What’s New?
+I introduced a **medical equipment filter** that allows users to find stays equipped with essential health tools like:
+
+- First Aid Kits  
+- Blood Pressure Monitors  
+- Digital Thermometers  
+- Glucometers (Sugar Check)  
+- Emergency Medication Kits  
+- Pulse Oximeters  
+
+This small yet powerful feature brings **peace of mind** to travelers who need medical support close at hand.
+
+### 🌙 Accessibility & Comfort
+I also added **dark mode**, enhancing the overall user experience—especially for nighttime browsing or users with visual sensitivities.
+
+### 🔜 What’s Next?
+This is just the beginning. I’m excited to expand the project with features like:
+
+- 📞 **Local emergency helpline numbers**
+- 🏥 **Nearby hospital & police station info**
+- 🌐 **Country-specific health and safety guidelines**
+
+### ❤️ Why It Matters
+This version of Airbnb isn’t just a clone—it’s a **meaningful evolution** designed to prioritize **well-being, preparedness, and trust**.  
+Whether you’re managing a health condition or simply want to travel more mindfully, this platform is here to support you every step of the way.
+
